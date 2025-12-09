@@ -90,3 +90,70 @@
   align-items: center;
   z-index: 999;
 }
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .signup-wrapper1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+  }
+
+  .signup-card1 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80% !important;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .signup-wrapper1 {
+    padding: 15px !important;
+  }
+
+  .signup-card1 {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 25px !important;
+    border-radius: 10px !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .signup-heading {
+    font-size: 22px !important;
+  }
+
+  .signup-field,
+  .textarea-field {
+    margin-left: 0 !important;
+    font-size: 15px !important;
+    padding: 12px !important;
+  }
+
+  .signup-green-btn {
+    font-size: 16px !important;
+    padding: 12px !important;
+  }
+}
+@media (max-width: 480px) {
+  .signup-card1 {
+    padding: 20px !important;
+  }
+
+  .signup-heading {
+    font-size: 20px !important;
+  }
+
+  .signup-field,
+  .textarea-field {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+
+  .signup-green-btn {
+    font-size: 15px !important;
+  }
+}
