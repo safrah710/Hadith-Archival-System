@@ -1,0 +1,159 @@
+.main-dash {
+    background-color: #daf5dc;
+    min-height: 100vh;
+    padding-left: 50px;
+    padding-top: 40px;
+}
+
+.header {
+    height: 150px;
+    width: 90%;
+    margin: auto;
+    border: 1px solid green;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.card-menu {
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+    padding-left: 130px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #ffffff; 
+    border: 1px solid #4CAF50;
+    border-radius: 10px; 
+    padding: 20px 20px 20px 50px; 
+    width: 300px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-left:-20px;
+    font-family: Arial, sans-serif;
+}
+.header {
+    height: 150px;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(0, 128, 0, 0.15);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dash-title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0b6d0b; 
+    font-family: "Poppins", sans-serif;
+}
+
+.dash-subtitle {
+    margin: 5px 0 0 0;
+    font-size: 25px;
+    color: #388e3c; 
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+}
+.hadith-text {
+  width: 70%;
+}
+
+
+.hadith-title-tam {
+  font-size: 15px;
+  font-weight: 200;
+  color: #000;
+  margin-bottom: 10px;
+}
+.hadith-title-eng {
+  font-size: 15px;
+  color: #000;
+   font-weight: 200;
+  margin-bottom: 10px;
+}
+.hadith-actions {
+  display: flex;
+  gap: 10px;
+}
+.show-btn {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.show-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  padding: 8px 14px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.delete-btn:hover {
+  background-color: #d90000;
+}
+.t-para1{
+ font-size: 15px;
+  color: #000;
+ font-weight: 600;
+  margin-bottom: 10px;
+}
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.show-btnnew {
+  padding: 10px 50px 10px 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+  margin-left: 30px;;
+}
+
+@media (max-width: 768px) {
+  .card-menu {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .show-btnnew {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .hadith-text {
+    width: 100%;
+  }
+}

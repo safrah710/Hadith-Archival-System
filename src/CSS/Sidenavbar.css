@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Side-nav {
+ position:fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: green;
+  transition: left 0.3s ease; 
+  padding-top: 20px;
+}
+.shift-left {
+  left: -150px;   
+}
+.nav {
+  padding: 10px 20px;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  margin-left:150px;
+}
+
+.div1 {
+  padding: 15px 20px;
+  border-radius:30px;
+  color: white;
+}
+.div1:hover{
+    background-color: rgb(146, 227, 146);
+}
+.para1{
+    font-family: "Roboto", sans-serif;
+}
+.para2{
+    font-family: "Roboto", sans-serif;
+}
+.div2 {
+  padding: 15px 20px;
+  border-radius:30px;
+  color: white;
+  margin-top:430px;
+}
+.div3 {
+  padding: 15px 20px;
+  border-radius:30px;
+  color: white;
+  margin-top:330px;
+}
+.div2:hover{
+    background-color: rgb(146, 227, 146);
+}
+.div3:hover{
+    background-color: rgb(146, 227, 146);
+}
