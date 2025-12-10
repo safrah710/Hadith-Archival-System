@@ -9,10 +9,11 @@
     padding: 40px;
     border-radius: 18px;
     max-width: 900px;
-    margin-left:230px;;
+    margin-left: 230px;
+    margin-top: 30px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-    margin-top:30px;
 }
+
 .show-para1 {
     font-size: 32px;
     font-weight: bold;
@@ -20,18 +21,20 @@
     text-align: center;
     margin-bottom: 25px;
 }
+
 .show-content {
-    font-size: 12px;
-    line-height: 3; 
+    font-size: 16px;
+    line-height: 2.2;
     text-align: justify;
-    white-space: pre-line;     
-    color: rgb(40, 40, 40);
+    white-space: pre-line;
+    color: #222;
     margin-top: 10px;
     padding: 10px 5px;
+    word-break: break-word;
 }
 
 .download-btn {
-    margin: 20px 20px 20px 300px;
+    margin: 20px auto;
     display: block;
     background-color: green;
     color: white;
@@ -46,100 +49,97 @@
     background-color: darkgreen;
 }
 
-.show-content {
-    white-space: pre-line; 
+.select-div {
+    margin-left: 1100px;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    left: -90px;
+    top: 100px;
+    width:110px;
 }
 
-.pdf-mode {
-    background: white !important;
-    padding: 0 !important;
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.pdf-container {
+    width: 800px !important;
+    padding: 40px !important;
     margin: 0 auto !important;
-    max-width: 100% !important;
+    background: white !important;
+}
+
+.pdf-mode * {
     box-shadow: none !important;
-    border-radius: 0 !important;
+    border: none !important;
 }
 
 .pdf-mode .show-para1 {
-    font-size: 30px !important;
+    font-size: 28px !important;
     margin-bottom: 20px !important;
+    text-align: center !important;
+    color: #000 !important;
 }
 
 .pdf-mode .show-content {
-    font-size: 18px !important;
-    line-height: 2 !important;
+    font-size: 16px !important;
+    line-height: 3.0 !important;
     text-align: justify !important;
-    text-justify: inter-word !important;
-    padding: 0 25px !important;
-    margin: 0 !important;
-    white-space: pre-wrap !important;
+    white-space: pre-line !important;
+    word-break: break-word !important;
+    max-width: 750px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     color: #000 !important;
 }
+
 .pdf-mode .download-btn {
     display: none !important;
 }
-.select-div{
-    margin-left:1100px;
-   border:none;
-    border-radius:10px;
-    background-color: green;
-    color:white;
-    padding:10px;
-    position:absolute;
-    left:-40px;
-    top:100px;
-    
+
+.page-break {
+    page-break-after: always;
 }
-.loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
+
 @media (max-width: 1024px) {
     .div-content {
         margin-left: 0;
         max-width: 90%;
         padding: 30px;
     }
-
     .select-div {
         left: auto;
         right: 20px;
         top: 120px;
         margin-left: 0;
     }
-
-    .download-btn {
-        margin: 20px auto;
-        display: block;
-    }
-
     .show-para1 {
         font-size: 28px;
     }
-
     .show-content {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 2.2;
     }
 }
-.div-show {
-    padding: 20px;
-    background-color: #e5f7e5;
-}
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
     .div-content {
         width: 100% !important;
         margin: 20px 0 !important;
         padding: 18px !important;
-        box-shadow: none;
         border-radius: 12px;
     }
     .select-div {
@@ -147,44 +147,75 @@
         left: 0 !important;
         top: 0 !important;
         margin: 10px auto !important;
-        display: block !important;
         width: 120px;
         text-align: center;
         font-size: 14px;
     }
     .show-para1 {
         font-size: 24px !important;
-        text-align: center;
         margin-bottom: 15px;
     }
     .show-content {
         font-size: 16px !important;
-        line-height: 1.6 !important;
+        line-height: 1.8 !important;
         padding: 5px !important;
-        text-align: justify;
-        word-break: break-word;
     }
     .download-btn {
         width: 100%;
         max-width: 250px;
         margin: 25px auto !important;
-        display: block;
-        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-
     .show-para1 {
         font-size: 20px !important;
     }
-
     .show-content {
         font-size: 14px !important;
+        line-height: 1.6 !important;
     }
-
-    .select-div {
+    /* .select-div {
         width: 110px;
         font-size: 13px;
+    } */
+
+}
+/* Default (Desktop & Tablet) */
+.select-div {
+    position: absolute;
+    top: 90px;
+    right: 40px;
+    background-color: green;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    z-index: 999;
+}
+
+/* Mobile Mode */
+@media (max-width: 768px) {
+    .select-div {
+        position: absolute !important;
+        top: 80px !important;
+        right: 20px !important;
+        left: auto !important;
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 140px;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .select-div {
+        top: 10px !important;
+        right: 15px !important;
+        width:90px;
+        font-size: 14px;
     }
 }

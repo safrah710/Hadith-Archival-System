@@ -16,13 +16,15 @@ function Sidebar() {
 
   return (
     <>
+
       <div className="mobile-nav-btn" onClick={toggleMenu}>
         <i className="fa-solid fa-bars"></i>
       </div>
 
+      {/* Sidebar / Topbar */}
       <div className={`Side-nav ${open ? "active" : ""}`}>
         
-
+        {/* MENU ITEMS */}
         <div className="div1" onClick={() => navigate('/Dashboard')}>
           <p className='para1'>Home</p>
         </div>

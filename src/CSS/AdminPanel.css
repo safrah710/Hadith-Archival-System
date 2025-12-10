@@ -1,44 +1,48 @@
+
+.adminpanel-div {
+  padding: 30px;
+  background-color: #e5f7e5;
+  min-height: 100vh;
+}
 .header1 {
-    height: 150px;
-    width: 90%;
-    margin: auto;
-    border: 1px solid green;
-    border-radius: 20px;
-    background-color: white;
-    margin-left:70px;
-    margin-top:20px;
-    padding:20px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid green;
+  border-radius: 20px;
+  height: auto;
 }
-.adminpanel-div{
-     padding: 30px;
-    background-color: #e5f7e5;
-    min-height: 100vh;
+.List1 {
+  width: 90%;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid green;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: auto; 
 }
-.List1{
-    height: 100px;
-    width: 90%;
-    margin: auto;
-    border: 1px solid green;
-    border-radius: 20px;
-    background-color: white;
-    margin-left:70px;
-    margin-top:20px;
-    padding:10px;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
+
+.left-para {
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.left-para{
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+.dlt1 {
+  padding: 10px 15px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
 }
-.dlt1{
-    padding:10px;
-    background-color: red;
-    border:none;
-    border-radius: 10px;
-    color:white;
-}
+
+
 .loader-overlay {
   position: fixed;
   top: 0;
@@ -50,4 +54,58 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+}
+
+@media (max-width: 1024px) {
+  .header1,
+  .List1 {
+    width: 95%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .adminpanel-div {
+    padding: 15px;
+  }
+
+  .header1 {
+    width: 100%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .List1 {
+    flex-direction: column;     
+    align-items: flex-start; 
+    gap: 10px;                  
+    width: 100%;
+    padding: 15px;
+  }
+
+  .left-para {
+    font-size: 16px !important;
+  }
+
+  .dlt1 {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+
+  .left-para {
+    font-size: 14px !important;
+  }
+
+  .dlt1 {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
 }
