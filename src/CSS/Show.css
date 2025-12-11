@@ -75,44 +75,67 @@
     z-index: 999;
 }
 
+/* --- PERFECT PDF PAGE --- */
 .pdf-container {
-    width: 800px !important;
-    padding: 40px !important;
-    margin: 0 auto !important;
+    width: 600px !important;                  /* Stable A4 width */
+    margin: 0 auto !important;                /* Center properly */
+    padding: 45px 50px !important;
     background: white !important;
+    border: 2px solid #000 !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
 }
 
-.pdf-mode * {
-    box-shadow: none !important;
-    border: none !important;
-}
-
+/* --- Title --- */
 .pdf-mode .show-para1 {
-    font-size: 28px !important;
-    margin-bottom: 20px !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
     text-align: center !important;
+    margin-bottom: 25px !important;
     color: #000 !important;
 }
 
+/* --- PROPER Tamil text styling --- */
 .pdf-mode .show-content {
-    font-size: 16px !important;
-    line-height: 3.0 !important;
+    font-size: 16px !important;               /* Good readable size */
+    line-height: 2.1 !important;              /* Clean spacing */
     text-align: justify !important;
-    white-space: pre-line !important;
     word-break: break-word !important;
-    max-width: 750px !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+    white-space: pre-line !important;
+
+    margin-top: 10px !important;              /* Before paragraph */
+    margin-bottom: 18px !important;           /* After paragraph */
+
     color: #000 !important;
+    max-width: 560px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
+/* Remove download button from PDF */
 .pdf-mode .download-btn {
     display: none !important;
 }
 
+/* --- FIX PAGE BREAK SPACING + NO BLANK GAP --- */
 .page-break {
-    page-break-after: always;
+    page-break-after: always !important;
+    padding-bottom: 30px !important;         /* Prevent content touching bottom */
+    margin-bottom: 0 !important;
+    display: block !important;
 }
+
+/* --- Ensure new page starts with clean top margin --- */
+.pdf-mode .page-break + * {
+    margin-top: 35px !important;
+}
+
+/* Remove extra margins created by html2pdf */
+.pdf-mode {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 
 @media (max-width: 1024px) {
     .div-content {

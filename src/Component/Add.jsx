@@ -12,6 +12,7 @@ const Add = () => {
   let [tcontent, setTcontent] = useState("");
   let [econtent, setEcontent] = useState("");
   const [loading,setLoading]=useState(false);
+  const [link,setLink]=useState("");
   let navigate = useNavigate();
     
   const handle_submit=async(e)=>{
@@ -19,7 +20,7 @@ const Add = () => {
     setLoading(true);
     try{
       let res=await axios.post('https://hadith-archival-system-1.onrender.com/hadith/Add',{
-         title,etitle,tcontent,econtent
+         title,etitle,tcontent,econtent,link
       })
       if(res.status===200){
         toast.success("Hadith Added Successfully");
@@ -96,8 +97,15 @@ const Add = () => {
             className="textarea-field"
             onChange={(e) => setEcontent(e.target.value)}
             required
-          ></textarea>
-
+          ></textarea> 
+           <input
+            type="text"
+            value={link}
+            placeholder="Link"
+            className="signup-field"
+            onChange={(e) => setLink(e.target.value)}
+            required
+          />
           <button className="signup-green-btn" type="submit">
             Add
           </button>

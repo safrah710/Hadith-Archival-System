@@ -34,24 +34,23 @@ function Show() {
     useEffect(() => {
         get();
     }, []);
+   const downloadPDF=async(title)=>{
+        try{
+            let res=await axios.post('https://hadith-archival-system-1.onrender.com/hadith/down',{
+                title
+            })
+             if (res.data.link) {
+       window.open(res.data.link, "_blank");
+  }
+            if(res.status===400){
+                toast.error("error!!")
+            }
 
-    const downloadPDF = async () => {
-        const element = contentRef.current;
-
-        element.classList.add("pdf-mode", "pdf-container", "pdf-border");
-
-        const opt = {
-            margin: 0,
-            filename: `${str}-${lang}.pdf`,
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: "pt", format: "a4", orientation: "portrait" }
-        };
-
-        await html2pdf().set(opt).from(element).save();
-
-        element.classList.remove("pdf-mode", "pdf-container", "pdf-border");
-    };
-
+        }
+        catch(err){
+            toast.error("error try agian  !!")
+        }
+   }
     return (
         <>
             {loading ? (
@@ -84,12 +83,14 @@ function Show() {
                             <p className="show-content">
                                 {lang === "Tamil" ? item.tcontent : item.econtent}
                             </p>
-                        </div>
-                    ))}
-
-                    <button className="download-btn" onClick={downloadPDF}>
+                             <button className="download-btn" onClick={()=>{downloadPDF(item.title)}}>
                         Download PDF
                     </button>
+                        </div>
+                        
+                    ))}
+
+                   
                 </div>
             </div>
         </>
