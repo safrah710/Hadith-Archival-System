@@ -3,10 +3,10 @@ const add=async(req,res)=>{
     await client.connect();
     try{
         let db= client.db(dbname);
-        let{title,etitle,tcontent,econtent}=req.body;
+        let{title,etitle,tcontent,econtent,link}=req.body;
         console.log(title);
         await db.collection('Hadith').insertOne({
-            title,etitle,tcontent,econtent
+            title,etitle,tcontent,econtent,link
         })
         res.status(200).send({
             message:"Hadith Added Suuccessfulluy"
@@ -73,6 +73,36 @@ catch(err){
     })
 }
 }
+const download = async (req, res) => {
+    await client.connect()
+    try {
+        let db=client.db(dbname);
+        const { title } = req.body;
+        
+
+        if (!title) {
+            return res.status(400).json({ message: "Title is required" });
+        }
+        const data = await db.collection("Hadith").findOne({ title: title });
+
+        if (!data) {
+            return res.status(404).json({ message: "No document found with this title" });
+        }
+        if (!data.link) {
+            return res.status(400).json({ message: "No link found in database" });
+        }
+          return res.json({ link: data.link });
+
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: "Server error", error: err.message });
+    }
+};
+
+
+
+
+
 export default{
-    add,get,get_details,delete1
+    add,get,get_details,delete1,download
 }   
