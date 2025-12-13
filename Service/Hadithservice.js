@@ -3,10 +3,10 @@ const add=async(req,res)=>{
     await client.connect();
     try{
         let db= client.db(dbname);
-        let{title,etitle,tcontent,econtent,link}=req.body;
+        let{title,etitle,tcontent,econtent,tlink,elink}=req.body;
         console.log(title);
         await db.collection('Hadith').insertOne({
-            title,etitle,tcontent,econtent,link
+            title,etitle,tcontent,econtent,tlink,elink
         })
         res.status(200).send({
             message:"Hadith Added Suuccessfulluy"
@@ -77,7 +77,7 @@ const download = async (req, res) => {
     await client.connect()
     try {
         let db=client.db(dbname);
-        const { title } = req.body;
+        const { title,lang} = req.body;
         
 
         if (!title) {
@@ -88,10 +88,16 @@ const download = async (req, res) => {
         if (!data) {
             return res.status(404).json({ message: "No document found with this title" });
         }
-        if (!data.link) {
+        if (!data.tlink) {
             return res.status(400).json({ message: "No link found in database" });
         }
-          return res.json({ link: data.link });
+        if(lang=="Tamil"){
+ return res.json({ link: data.tlink });
+        }
+        if(lang=="English"){
+return res.json({ link: data.elink });
+        }
+          
 
     } catch (err) {
         console.error(err);
