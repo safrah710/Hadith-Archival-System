@@ -37,7 +37,7 @@ function Show() {
    const downloadPDF=async(title)=>{
         try{
             let res=await axios.post('https://hadith-archival-system-1.onrender.com/hadith/down',{
-                title
+                title,lang
             })
              if (res.data.link) {
        window.open(res.data.link, "_blank");
@@ -83,7 +83,7 @@ function Show() {
                             <p className="show-content">
                                 {lang === "Tamil" ? item.tcontent : item.econtent}
                             </p>
-                             <button className="download-btn" onClick={()=>{downloadPDF(item.title)}}>
+                             <button className="download-btn" onClick={()=>{downloadPDF(item.title,lang)}}>
                         Download PDF
                     </button>
                         </div>
