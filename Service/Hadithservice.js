@@ -104,11 +104,53 @@ return res.json({ link: data.elink });
         return res.status(500).json({ message: "Server error", error: err.message });
     }
 };
+const update = async (req, res) => {
+  await client.connect();
+
+  try {
+    const db = client.db(dbname);
+
+    const { oldTitle, title, etitle, tcontent, econtent, tlink, elink } = req.body;
+    console.log(oldTitle )
+
+    if (!oldTitle) {
+      return res.status(400).send({ message: "Old Title is required" });
+    }
+
+    const result = await db.collection("Hadith").updateOne(
+      { title: oldTitle }, 
+      {
+        $set: {
+          title,
+          etitle,
+          tcontent,
+          econtent,
+          tlink,
+          elink,
+        },
+      }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).send({ message: "Hadith not found" });
+    }
+
+    res.status(200).send({
+      message: "Hadith Updated Successfully",
+    });
+  } catch (err) {
+    res.status(500).send({
+      message: "Update Error",
+      error: err.message,
+    });
+  }
+};
+
 
 
 
 
 
 export default{
-    add,get,get_details,delete1,download
+    add,get,get_details,delete1,download,update
 }   

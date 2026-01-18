@@ -9,6 +9,7 @@ const login=async(req,res)=>{
        let email=req.body.email;
        let password=req.body.password;
        let data=await db.collection("User").findOne({email:email});
+       console.log(data);
        if(data){
            if(Auth.compare(password,data.hashed)){
               let payload={

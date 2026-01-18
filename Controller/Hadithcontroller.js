@@ -6,5 +6,5 @@ Hadithcontroller.get('/get',Hadithservice.get)
 Hadithcontroller.get('/get_details',Hadithservice.get_details)
 Hadithcontroller.delete('/delete1',Hadithservice.delete1)
 Hadithcontroller.post('/down',Hadithservice.download)
-
+Hadithcontroller.post('/update',Hadithservice.update)
 export default Hadithcontroller;
