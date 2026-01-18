@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import "../CSS/Show.css";  
-import "../CSS/About.css";   // <-- New CSS file for About Page
+import "../CSS/About.css";  
 
 function AboutPage() {
   return (

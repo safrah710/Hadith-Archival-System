@@ -9,6 +9,7 @@ import AdminPanel from "../Component/AdminPanel";
 import ForgotEmail from "../Component/ForgotEmail";
 import ChangePassword from "../Component/ChangePassword";
 import AboutPage from "../Component/About";
+import EditHadith from "../Component/EditHadith";
 
 let router = [
   {
@@ -72,6 +73,14 @@ let router = [
     element:(
      <ProtectedRoute>
         <AdminPanel/>
+     </ProtectedRoute>
+    )
+  },
+  {
+    path:'/Edit/:str1/:str2',
+    element:(
+     <ProtectedRoute>
+        <EditHadith/>
      </ProtectedRoute>
     )
   }

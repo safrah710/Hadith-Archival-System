@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import toast from 'react-hot-toast';
 import Sidebar from './Sidebar';
 import '../CSS/Show.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Oval } from 'react-loader-spinner';
 import html2pdf from 'html2pdf.js';
@@ -13,6 +13,8 @@ function Show() {
     const [lang, setLang] = useState("Tamil");
     const [loading, setLoading] = useState(false);
     const contentRef = useRef();
+    const name=sessionStorage.getItem("name");
+    let navigate=useNavigate();
 
     const get = async () => {
         setLoading(true);
@@ -86,6 +88,14 @@ function Show() {
                              <button className="download-btn" onClick={()=>{downloadPDF(item.title,lang)}}>
                         Download PDF
                     </button>
+                    {
+                      name==="sihabutheen"?( <button className="download-btn2" onClick={()=>{
+                        navigate(`/Edit/${encodeURIComponent(item.title)}/${encodeURIComponent(item.etitle)}`);
+
+                      }}>
+                        Edit
+                        </button>):(null)
+                    }
                         </div>
                         
                     ))}
