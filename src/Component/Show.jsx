@@ -89,7 +89,7 @@ function Show() {
                         Download PDF
                     </button>
                     {
-                      name==="sihabutheen"?( <button className="download-btn2" onClick={()=>{
+                      name==="Admin"?( <button className="download-btn2" onClick={()=>{
                         navigate(`/Edit/${encodeURIComponent(item.title)}/${encodeURIComponent(item.etitle)}`);
 
                       }}>
